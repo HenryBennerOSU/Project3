@@ -120,7 +120,6 @@ def build_post_tab(notebook, url_var)
       now = Time.now.utc.iso8601
       user = { firstName: first, lastName: last, email: email,
                phone: phone, createdAt: now, updatedAt: now }
-      call api_request
       show_output(output, api_request(:post, url_var.value, nil, user))
     end
   }
