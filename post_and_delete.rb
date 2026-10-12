@@ -166,18 +166,3 @@ def build_delete_tab(notebook, url_var)
   Tk::Tile::Button.new(frame, text: 'Delete User', command: delete_click)
     .grid(row: 1, column: 0, columnspan: 2, pady: 8)
 end
-
-#--
-
-root = TkRoot.new { title 'Project 3 - POST & DELETE test' }
-url_var = TkVariable.new('')
-
-top = Tk::Tile::Frame.new(root, padding: 10).pack(fill: 'x')
-Tk::Tile::Label.new(top, text: 'API URL:').pack(side: 'left')
-Tk::Tile::Entry.new(top, textvariable: url_var, width: 55).pack(side: 'left', padx: 5)
-
-notebook = Tk::Tile::Notebook.new(root).pack(fill: 'both', expand: true)
-build_post_tab(notebook, url_var)
-build_delete_tab(notebook, url_var)
-
-Tk.mainloop
